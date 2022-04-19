@@ -1,0 +1,21 @@
+name: integration test
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  k6_cloud_test:
+    name: k6 cloud test run
+    runs-on: ubuntu-latest
+    container: docker://grafana/k6:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Cloud k6 test
+        env:
+          K6_CLOUD_TOKEN: e4c615eb2a406a9cb5006effd5c1057d7ad7f70c9025618b69d87ec7385553bb
+        run: k6 cloud ./test.js
+
