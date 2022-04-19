@@ -11,6 +11,8 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get(`${__ENV.URL}`);
+
+    const url = `${__ENV.MY_HOSTNAME}/`;
+  const res = http.get(url);
   sleep(1);
 }
