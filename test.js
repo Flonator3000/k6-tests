@@ -12,7 +12,7 @@ export const options = {
 
 export default function () {
 
-    const url = `${__ENV.MY_HOSTNAME}/`;
+    const url = `${__ENV.URL}/`;
   const res = http.get(url);
   sleep(1);
 }
