@@ -17,5 +17,6 @@ jobs:
       - name: Cloud k6 test
         env:
           K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
+          URL: ${{ secrets.URL }}
         run: k6 cloud ./test.js
 
