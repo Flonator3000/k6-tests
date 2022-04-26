@@ -4,6 +4,10 @@ on:
     branches:
       - 'master'
 
+env:
+  K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
+  URL: ${{ secrets.URL }}
+
 jobs:
   k6_cloud_test:
     name: k6 cloud test run
@@ -15,8 +19,5 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Cloud k6 test
-        env:
-          K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
-          URL: ${{ secrets.URL }}
         run: k6 run ./test.js
 
