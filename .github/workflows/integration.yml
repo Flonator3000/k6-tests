@@ -8,7 +8,7 @@ env:
   URL: ${{ secrets.URL }}
 
 jobs:
-  k6_cloud_test:
+  k6_cloud_test: 
     name: k6 cloud test run
     runs-on: ubuntu-latest
     container: docker://grafana/k6:latest
