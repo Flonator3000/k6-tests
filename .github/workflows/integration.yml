@@ -1,8 +1,7 @@
 name: integration test
 on:
-  push:
-    branches:
-      - 'master'
+  schedule:
+    - cron: '0/30 * * * * ?'
 
 env:
   K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
