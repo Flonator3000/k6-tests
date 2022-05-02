@@ -1,7 +1,7 @@
 name: integration test
 on:
   schedule:
-    - cron: '*/1 * * * * ad'
+    - cron: '*/5 * * * *'
 
 env:
   K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }} 
