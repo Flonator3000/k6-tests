@@ -1,7 +1,8 @@
 name: integration test
 on:
-  schedule:
-    - cron: "0 0 * * *"
+  push:
+    branches: 
+     -master
 
 env:
   K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }} 
@@ -13,10 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     container: docker://grafana/k6:latest
 
+    env:
+      VARIABLE: test
+
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
       - name: Cloud k6 test
-        run: k6 run ./test.js
+        run: k6 run "./$VARIABLE.js"
 
