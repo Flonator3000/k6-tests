@@ -16,7 +16,7 @@ jobs:
 
     env:
       VARIABLE: te
-      FILENAME: $VARIABLEst
+      FILENAME: "$VARIABLEst"
 
     steps:
       - name: Checkout
