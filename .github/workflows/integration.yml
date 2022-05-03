@@ -15,7 +15,8 @@ jobs:
     container: docker://grafana/k6:latest
 
     env:
-      VARIABLE: test
+      VARIABLE: te
+      FILENAME: $VARIABLEst
 
     steps:
       - name: Checkout
